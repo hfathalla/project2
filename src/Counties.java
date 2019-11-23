@@ -152,11 +152,12 @@ public class Counties {
      * result should be Brazil Canada Mexico Canada
      */
     public ArrayList<String> replaceTheCountry(ArrayList<String> myCountries, String firstCountry, String SecondCounry) {
-    for (String x: myCountries ){
-      if (x.contains(firstCountry)){
-          int a = myCountries.indexOf(firstCountry);
-          myCountries.set(a,SecondCounry);
-      }
+        for (int i = 0; i < myCountries.size(); i++) {
+          if (myCountries.get(i).equals(firstCountry)){
+              myCountries.set(i,SecondCounry);
+        }else if(! myCountries.contains(firstCountry)){
+             myCountries.set(i,"-1") ;
+          }
     }
 
         return myCountries;
